@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "CreateUser";
+}
+
+<h2><u>Register</u></h2>
+<br />
+<form action="" method="post">
+    <p>
+        ID: <input type="text" placeholder="Enter your ID" name="Id" class="form-control" />
+    </p>
+    <p>
+        Name: <input type="text" placeholder="Enter your Name" name="Name" class="form-control" />
+    </p>
+    <p>
+        Contact number: <input type="text" placeholder="Enter your conatct number" name="Contact" class="form-control" />
+    </p>
+    <p>
+        Address/Location: <input type="text" placeholder="Enter your address/location" name="Address" class="form-control" />
+    </p>
+    <p>
+        E-mail: <input type="text" placeholder="Enter your e-mail" name="Email" class="form-control" />
+    </p>
+    <p>
+        Password: <input type="text" placeholder="Enter your password" name="Password" class="form-control" />
+    </p>
+    <p>
+        Type:
+        <select id="type" name="Type" class="btn btn-secondary dropdown-toggle">
+            <option value="Admin">Admin</option>
+            <option value="Restaurant">Restaurant</option>
+            <option value="Employee">Employee</option>
+        </select>
+    </p>
+    <br />
+    <input type="submit" value="Register" class="btn btn-success" />
+</form>
+

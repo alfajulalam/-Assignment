@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<br />
+<center>
+    <text>
+        Welcome, @Session["Name"].ToString() !
+    </text>
+</center>
+<h3><u>Admin Dashboard</u></h3>
+<a class="navbar-brand" href="/Registration/Dashboard">Requests</a>
+<a class="navbar-brand" href="/Registration/AdminHistory"> History </a>
+<a class="navbar-brand" href="/Registration/AdminRes"> Restaurants </a>
+<a class="navbar-brand" href="/Registration/AdminEmp"> Employees </a>
+<a class="navbar-brand" href="/Registration/UserLogin"> Logout</a>
+<br />
+<br />
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Restaurant ID</th>
+        <th>Name of food</th>
+        <th>Quantity</th>
+        <th>Preservation Time</th>
+        <th>Status</th>
+        <th>Assigned to</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var or in Model)
+    {
+        if (or.Status == "Pickup Requested")
+        {
+
+            <tr>
+                <td>@or.Id</td>
+                <td>@or.RestaurantID</td>
+                <td>@or.Name</td>
+                <td>@or.Quantity</td>
+                <td>@or.Preserve</td>
+                <td>@or.Status</td>
+                <td>@or.Assign</td>
+                <td><a href="" class="btn btn-info">Edit</a></td>
+            </tr>
+        }
+    }
+
+</table>
+

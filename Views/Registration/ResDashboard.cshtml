@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "ResDashboard";
+}
+
+<center>
+    <text>
+        Welcome, @Session["Name"].ToString() !
+    </text>
+</center>
+<h3><u>Restaurant Dashboard</u></h3>
+<a class="navbar-brand" href="/Registration/ResDashboard">Requests</a>
+<a class="navbar-brand" href="/Registration/ResHistory"> History </a>
+<a class="navbar-brand" href="/Registration/ResDetails"> My Details </a>
+<a class="navbar-brand" href="/Registration/UserLogin"> Logout</a>
+<br />
+<br />
+<br />
+<form action="" method="post">
+    <p>
+        ID: <input type="text" placeholder="Enter ID" name="Id" class="form-control" />
+    </p>
+    <p>
+        Restaurant ID: <input type="text" name="RestaurantID" class="form-control" value="@Session["Id"].ToString()" />
+    </p>
+    <p>
+        Name of Food: <input type="text" placeholder="Enter the name of the food" name="Name" class="form-control" />
+    </p>
+    <p>
+        Quantity: <input type="text" placeholder="Enter the quantity" name="Quantity" class="form-control" />
+    </p>
+    <p>
+        Preservation Time: <input type="text" placeholder="Enter the time in mins/hrs" name="Preserve" class="form-control" />
+    </p>
+    <p>
+        Status:
+        <select id="type" name="Status" class="btn btn-secondary dropdown-toggle">
+            <option value="Pickup Requested">Pickup Requested</option>
+        </select>
+    </p>
+    <p>
+        Assign: <input type="text" placeholder="Not needed" name="Assign" class="form-control" />
+    </p>
+    <input type="submit" value="Request" class="btn btn-success" />
+</form>
+

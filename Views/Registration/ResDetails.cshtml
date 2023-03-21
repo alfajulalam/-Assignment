@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "ResDetails";
+}
+
+<center>
+    <text>
+        Welcome, @Session["Name"].ToString() !
+    </text>
+</center>
+<h3><u>Restaurant Dashboard</u></h3>
+<a class="navbar-brand" href="/Registration/ResDashboard">Requests</a>
+<a class="navbar-brand" href="/Registration/ResHistory"> History </a>
+<a class="navbar-brand" href="/Registration/ResDetails"> My Details </a>
+<a class="navbar-brand" href="/Registration/UserLogin"> Logout</a>
+<br />
+<br />
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Contact</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Type</th>
+        <!--<th>Action</th>-->
+    </tr>
+    @foreach (var or in Model)
+    {
+        if (Session["Id"].ToString() == or.Id)
+        {
+
+            <tr>
+                <td>@or.Id</td>
+                <td>@or.Name</td>
+                <td>@or.Contact</td>
+                <td>@or.Address</td>
+                <td>@or.Email</td>
+                <td>@or.Password</td>
+                <td>@or.Type</td>
+            </tr>
+        }
+    }
+
+</table>
+<a href="/Registration/ResEdit">Edit Details</a>
+

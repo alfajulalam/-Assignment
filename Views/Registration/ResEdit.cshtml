@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "ResEdit";
+}
+
+@foreach (var or in Model)
+{
+    if (Session["Id"].ToString() == or.Id)
+    {
+        <form action="" method="post">
+            <p>
+                ID: <input type="text" placeholder="Enter your ID" name="Id" class="form-control" value="@or.Id" readonly />
+            </p>
+            <p>
+                Name: <input type="text" placeholder="Enter your Name" name="Name" class="form-control" value="@or.Name" />
+            </p>
+            <p>
+                Contact number: <input type="text" placeholder="Enter your conatct number" name="Contact" class="form-control" value="@or.Contact" />
+            </p>
+            <p>
+                Address/Location: <input type="text" placeholder="Enter your address/location" name="Address" class="form-control" value="@or.Address" />
+            </p>
+            <p>
+                E-mail: <input type="text" placeholder="Enter your e-mail" name="Email" class="form-control" value="@or.Email" />
+            </p>
+            <p>
+                Password: <input type="text" placeholder="Enter your password" name="Password" class="form-control" value="@or.Password" />
+            </p>
+            <p>
+                Type: <input type="text" placeholder="Enter your password" name="Password" class="form-control" value="@or.Type" readonly />
+            </p>
+            <input type="submit" value="Edit info" class="btn btn-success" />
+        </form>
+    }
+
+}
+

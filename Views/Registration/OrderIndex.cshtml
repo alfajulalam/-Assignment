@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "OrderIndex";
+}
+
+<center>
+    <br /><br />
+    @if (@TempData["msg"] != null)
+    {
+        <span class="alert alert-info">@TempData["msg"]</span>
+    }
+    <br /><br /><br />
+    <!--<table class="table table-bordered">
+        @foreach (var or in Model)
+        {
+            <tr>
+                <td>@or.Id</td>
+                <td>@or.RestaurantID</td>
+                <td>@or.Name</td>
+                <td>@or.Quantity</td>
+                <td>@or.Preserve</td>
+                <td>@or.Status</td>
+                <td>@or.Assign</td>
+            </tr>
+        }
+
+    </table>-->
+    <a href="/Registration/ResDashboard">Go back to dashboard</a>
+</center>
+

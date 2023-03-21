@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "ResHistory";
+}
+
+<h3><u>Restaurant Dashboard</u></h3>
+<a class="navbar-brand" href="/Registration/ResDashboard">Requests</a>
+<a class="navbar-brand" href="/Registration/ResHistory"> History </a>
+<a class="navbar-brand" href="/Registration/ResDetails"> My Details </a>
+<a class="navbar-brand" href="/Registration/UserLogin"> Logout</a>
+<br />
+<br />
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Restaurant ID</th>
+        <th>Name of food</th>
+        <th>Quantity</th>
+        <th>Preservation Time</th>
+        <th>Status</th>
+        <th>Assigned to</th>
+        <!--<th>Action</th>-->
+    </tr>
+    @foreach (var or in Model)
+    {
+        if (Session["Id"].ToString() == or.RestaurantID)
+        {
+
+            <tr>
+                <td>@or.Id</td>
+                <td>@or.RestaurantID</td>
+                <td>@or.Name</td>
+                <td>@or.Quantity</td>
+                <td>@or.Preserve</td>
+                <td>@or.Status</td>
+                <td>@or.Assign</td>
+            </tr>
+        }
+    }
+
+</table>
+
